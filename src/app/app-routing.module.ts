@@ -8,9 +8,22 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'datos-usuario',
     pathMatch: 'full'
   },
+  {
+    path: 'datos-usuario',
+    loadChildren: () => import('./pages/datos-usuario/datos-usuario.module').then( m => m.DatosUsuarioPageModule)
+  },
+  {
+    path: 'formulario-entrada',
+    loadChildren: () => import('./pages/formulario-entrada/formulario-entrada.module').then( m => m.FormularioEntradaPageModule)
+  },
+  {
+    path: 'fin-boleta',
+    loadChildren: () => import('./pages/fin-boleta/fin-boleta.module').then( m => m.FinBoletaPageModule)
+  },
+
 ];
 
 @NgModule({
