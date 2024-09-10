@@ -1,0 +1,7 @@
+{
+  "name": "VentasApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
