@@ -17,6 +17,7 @@ export class DatosUsuarioPage implements OnInit {
     public formBuilder: FormBuilder,
     public servicios: ServiciosService,
     public alertController: AlertController,
+    public navCtrl: NavController
   ) { 
     this.f_datos_usuario = this.formBuilder.group({
       nombre: new FormControl("", Validators.required),
@@ -42,6 +43,7 @@ export class DatosUsuarioPage implements OnInit {
       // Guardamos el usuario usando el servicio
       this.servicios.guardarUsuario(usuario);
       console.log(this.servicios.usuarios);    
+      this.navCtrl.navigateForward('/formulario-entrada'); // Navega a la página de login
     } else {
       const alert = await this.alertController.create({
         header: '¡Error!',
