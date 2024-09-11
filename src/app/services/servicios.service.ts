@@ -54,13 +54,13 @@ export class ServiciosService {
 
   calcularDescuentoPorEdad(edad: number): number {
     if (edad < 10) {
-      this.descuento = 0.20;  
+      this.descuento = this.precioTotal * 0.20;  
       this.textoDescuento = "Por ser menor de 10 años, tienes un 20% de descuento";
     } else if (edad > 65) {
-      this.descuento = 0.50;  
+      this.descuento = this.precioTotal * 0.50;  
       this.textoDescuento = "Por ser mayor de 65 años, tienes un 50% de descuento";
     } else if (edad >= 10 && edad <= 18) {
-      this.descuento = 0.10;
+      this.descuento =this.precioTotal * 0.10;
       this.textoDescuento = "Por ser estudiante, tienes un 10% de descuento";
     }else {
       this.descuento = 0;  
@@ -73,5 +73,10 @@ export class ServiciosService {
     const descuento = this.calcularDescuentoPorEdad(edad);
     return this.precioTotal - descuento;
   }
+
+  obtenerTextoDescuento(): string {
+    return this.textoDescuento;
+  }
+  
  
 }
