@@ -21,9 +21,9 @@
 
         <ion-item>
           <ion-label>Tipo de Entrada</ion-label>
-          <ion-select formControlName="tipo_entrada">
-            <ion-select-option *ngFor="let tipo of tipos_entrada" [value]="tipo.tipo">
-              {{ tipo.tipo }} - ${{ tipo.precio }}
+          <ion-select formControlName="tipos_evento">
+            <ion-select-option *ngFor="let tipo of tipos_evento" [value]="tipo.tipo">
+              {{ tipo.tipo }} - {{ tipo.descripcion }}
             </ion-select-option>
           </ion-select>
         </ion-item>
@@ -43,7 +43,7 @@
         </ion-item>
         
         
-        <ion-button color="tertiary" expand="block">Finalizar la compra</ion-button>
+        <ion-button color="tertiary" expand="block">Ver Boleta</ion-button>
       </form>
     </ion-card-content>
   </ion-card>

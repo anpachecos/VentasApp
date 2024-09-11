@@ -10,6 +10,11 @@ import { FormGroup, FormBuilder, Validators} from '@angular/forms';
 })
 export class FormularioEntradaPage implements OnInit {
 
+  tipos_evento = [
+    { tipo: "CONCIERTO", descripcion: "Mr Bungle en Vivo" },
+    { tipo: "DEPORTE", descripcion: "Colo - Colo Vs U de Chile" },
+    { tipo: "TEATRO", descripcion: "La Traviata" }
+  ]
   
   tipos_entrada = [
     { tipo: "VIP", precio: 5000 },
