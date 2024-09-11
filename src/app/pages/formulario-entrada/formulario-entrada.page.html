@@ -9,7 +9,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class ="fade-in" >
   <ion-card *ngIf="usuario"> <!-- Cuando los datos que vamos a llamar pueden ser null, hay que usar ngIf -->
     <ion-card-content>
       <ion-card-subtitle>Bienvenido, {{ usuario.nombre }} {{ usuario.apellido }}</ion-card-subtitle>

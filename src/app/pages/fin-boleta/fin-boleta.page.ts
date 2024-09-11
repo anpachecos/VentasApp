@@ -42,7 +42,7 @@ export class FinBoletaPage implements OnInit {
       buttons: ['Aceptar']
     });
     await alert.present();
-    this.navCtrl.navigateForward('/fin-boleta');
+    this.navCtrl.navigateForward('/datos-usuario');
 
   }
 
