@@ -10,6 +10,16 @@ import { FormGroup, FormBuilder, Validators} from '@angular/forms';
 })
 export class FormularioEntradaPage implements OnInit {
 
+  
+  tipos_entrada = [
+    { tipo: "VIP", precio: 5000 },
+    { tipo: "GENERAL", precio: 3000 },
+    { tipo: "PREFERENCIAL", precio: 4000 }
+  ];
+  selectedEntrada: string = ''; 
+  precioEntrada: number | undefined;
+
+
   usuario: Usuario | null = null;
   f_datos_entrada: FormGroup;
 
@@ -22,6 +32,7 @@ export class FormularioEntradaPage implements OnInit {
 }
 
   ngOnInit() {
+
 
 //TRAREMOS EL USUARIO ACTUAL NO SE SI HAY UNA FORMA MAS EFICIENTE QUE NO SEA CON EL LOCAL STORAGEE AA
     this.usuario = this.servicios.obtenerUsuarioActual();

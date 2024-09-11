@@ -18,20 +18,31 @@
 
     <ion-card-content>
       <form [formGroup]="f_datos_entrada">
+
+        <ion-item>
+          <ion-label>Tipo de Entrada</ion-label>
+          <ion-select formControlName="tipo_entrada">
+            <ion-select-option *ngFor="let tipo of tipos_entrada" [value]="tipo.tipo">
+              {{ tipo.tipo }} - ${{ tipo.precio }}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+
         <ion-item>
           <ion-label position="floating">Cantidad de entradas</ion-label>
           <ion-input type="number" formControlName="cantidad"></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-label position="floating">Tipo de Entrada</ion-label>
+          <ion-label>Tipo de Entrada</ion-label>
           <ion-select formControlName="tipo_entrada">
-            <ion-select-option value="general">General</ion-select-option>
-            <ion-select-option value="vip">VIP</ion-select-option>
-            <ion-select-option value="backstage">Backstage</ion-select-option>
+            <ion-select-option *ngFor="let tipo of tipos_entrada" [value]="tipo.tipo">
+              {{ tipo.tipo }} - ${{ tipo.precio }}
+            </ion-select-option>
           </ion-select>
         </ion-item>
-
+        
+        
         <ion-button color="tertiary" expand="block">Finalizar la compra</ion-button>
       </form>
     </ion-card-content>
