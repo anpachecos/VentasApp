@@ -1,12 +1,14 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>datos_usuario</ion-title>
+<ion-header>
+  <ion-toolbar color="tertiary"> 
+    <ion-buttons slot = "start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>    <ion-title>
+      <ion-text>VentApp de Entradas</ion-text>
+    </ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> 
 
 <ion-content [fullscreen]="true">
-
-
     <ion-card>
       <ion-card-header>
         <ion-card-title>Ingresa tus datos: </ion-card-title>
@@ -29,8 +31,16 @@
         <ion-label position="floating">Edad </ion-label>
         <ion-input type="number" formControlName="edad"></ion-input>
       </ion-item>
-      <ion-button expand="block" (click)="continuarCompra()">Continuar la compra</ion-button> <!--(click)="guardar_usuario()"-->
+      <ion-button color="tertiary" expand="block" (click)="continuarCompra()">Continuar la compra</ion-button> <!--(click)="guardar_usuario()"-->
 <!--Hay que arreglar ese routerLink porque no valida nada, creo que mejor lo pongo en la función continuarCompra-->
     </form>
   </ion-card-content>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title size="small" text-center>
+      © 2024 Antonia Pacheco. Todos los derechos reservados.
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>

@@ -31,8 +31,8 @@ export class DatosUsuarioPage implements OnInit {
 
   async continuarCompra() {
     var f = this.f_datos_usuario.value;
-    // Creamos un objeto de tipo Usuario usando los valores del formulario
-    
+ 
+    //Si el formulario es valido (se cumplen los required) entonces le asignamos los valores del formulario al usuario. 
     if(this.f_datos_usuario.valid){
       const usuario: Usuario = {
         nombre: f.nombre,
@@ -40,10 +40,12 @@ export class DatosUsuarioPage implements OnInit {
         edad: f.edad
       };
 
-      // Guardamos el usuario usando el servicio
+      // Guardamos el usuario en un array usando el servicio
       this.servicios.guardarUsuario(usuario);
       console.log(this.servicios.usuarios);    
-      this.navCtrl.navigateForward('/formulario-entrada'); // Navega a la página de login
+      console.log("El usuario " + f.nombre + " se ha guardado correctamente");
+      this.navCtrl.navigateForward('/formulario-entrada'); // para que avance de página
+      
     } else {
       const alert = await this.alertController.create({
         header: '¡Error!',
