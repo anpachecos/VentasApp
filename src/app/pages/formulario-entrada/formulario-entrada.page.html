@@ -9,14 +9,12 @@
 </ion-header> 
 
 <ion-content>
-  <div *ngIf="usuario">
-    <h2>Bienvenido, {{ usuario.nombre }} {{ usuario.apellido }}</h2>
-    <p>Edad: {{ usuario.edad }}</p>
-  </div>
-  <div *ngIf="!usuario">
-    <p>No se ha encontrado un usuario registrado.</p>
-  </div>
-  
+  <ion-card *ngIf="usuario"> <!--Cuando los datos que vamos a llamar pueden ser null, hay que usar el ng if-->
+    <ion-card-content>
+      <ion-card-subtitle>Bienvenido, {{ usuario.nombre }} {{ usuario.apellido }}</ion-card-subtitle>
+      <ion-card-subtitle>Edad: {{ usuario.edad }}</ion-card-subtitle>
+    </ion-card-content>
+  </ion-card>
   <!-- Aquí iría el formulario de compra de entradas -->
 </ion-content>
 
