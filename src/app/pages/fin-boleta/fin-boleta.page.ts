@@ -2,7 +2,7 @@ import { ServiciosService } from 'src/app/services/servicios.service';
 import { Usuario } from 'src/app/models/usuario';
 import { FormGroup, FormBuilder, Validators} from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import { AlertController, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-fin-boleta',
@@ -16,7 +16,8 @@ export class FinBoletaPage implements OnInit {
   descuento: number = 0;
   textoDescuento: string = '';
 
-  constructor(public servicios: ServiciosService,    public alertController: AlertController
+  constructor(public servicios: ServiciosService,    public alertController: AlertController,
+    public navCtrl : NavController
   ) { }
 
   ngOnInit() {
@@ -37,10 +38,12 @@ export class FinBoletaPage implements OnInit {
   async finalizar(){
     const alert = await this.alertController.create({
       header: 'Compra finalizada con éxito',
-      message: 'Ya puedes ir a tu evento uwu',
+      message: 'Redirigiendo al Menú Principal',
       buttons: ['Aceptar']
     });
     await alert.present();
+    this.navCtrl.navigateForward('/fin-boleta');
+
   }
 
 
