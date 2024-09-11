@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiciosService } from 'src/app/services/servicios.service';
 import { Usuario } from 'src/app/models/usuario';
+import { FormGroup, FormBuilder, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-formulario-entrada',
@@ -10,8 +11,15 @@ import { Usuario } from 'src/app/models/usuario';
 export class FormularioEntradaPage implements OnInit {
 
   usuario: Usuario | null = null;
+  f_datos_entrada: FormGroup;
 
-  constructor(public servicios: ServiciosService) { }
+
+  constructor(public servicios: ServiciosService, private formBuilder: FormBuilder) { 
+    this.f_datos_entrada = this.formBuilder.group({
+      cantidad: ['', Validators.required],
+      tipo_entrada: ['', Validators.required]
+  });
+}
 
   ngOnInit() {
 
