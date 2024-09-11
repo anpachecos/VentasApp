@@ -1,3 +1,6 @@
+import { ServiciosService } from 'src/app/services/servicios.service';
+import { Usuario } from 'src/app/models/usuario';
+import { FormGroup, FormBuilder, Validators} from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FinBoletaPage implements OnInit {
 
-  constructor() { }
+  constructor(public servicios: ServiciosService) { }
 
   ngOnInit() {
   }
