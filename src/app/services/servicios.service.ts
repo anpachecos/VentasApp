@@ -29,4 +29,8 @@ export class ServiciosService {
   obtenerDatosCompra(){
     return this.datos_compra
   }
+
+  calcularTotal(){
+    
+  }
 }

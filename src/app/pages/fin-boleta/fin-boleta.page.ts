@@ -9,10 +9,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./fin-boleta.page.scss'],
 })
 export class FinBoletaPage implements OnInit {
+  datosCompra: any = {};
 
   constructor(public servicios: ServiciosService) { }
 
   ngOnInit() {
+    this.datosCompra = this.servicios.obtenerDatosCompra();  
+    console.log(this.datosCompra);  // Imprimir pa ver si trajo los datos o no sii funcaaaa
   }
+
 
 }
