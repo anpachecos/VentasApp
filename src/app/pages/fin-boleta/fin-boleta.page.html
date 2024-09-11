@@ -1,13 +1,57 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>fin-boleta</ion-title>
+<ion-header>
+  <ion-toolbar color="tertiary"> 
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-text>VentApp de Entradas</ion-text>
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">fin-boleta</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-card *ngIf="usuario">
+
+  <ion-card-header>
+      <ion-card-title>Tus datos</ion-card-title>
+  </ion-card-header> 
+  <ion-card-content>
+    <p>Nombre: {{ usuario.nombre }}</p>
+    <p>Apellido: {{ usuario.apellido }}</p>
+    <p>Edad: {{ usuario.edad }}</p>
+  </ion-card-content>   
+  </ion-card>
+
+  <ion-card *ngIf="datosCompra">
+    <ion-card-header>
+      <ion-card-title>Detalle de tu Boleta</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Evento: {{ datosCompra.tipos_evento }}</p>
+      <p>Cantidad: {{ datosCompra.cantidad }}</p>
+      <p>Tipo de Entrada: {{ datosCompra.tipo_entrada }}</p>
+      <p>Precio por entrada: {{ datosCompra.tipo_entrada.precio }}</p>
+      <p><strong>Total sin Descuento: ${{ precioTotal }}</strong></p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="datosCompra">
+    <ion-card-header>
+      <ion-card-title>Descuentos</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p></p>
+     
+      <p><strong>Total: ${{ precioTotal }}</strong></p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
+
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title size="small" text-center>
+      © 2024 Antonia Pacheco. Todos los derechos reservados.
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>

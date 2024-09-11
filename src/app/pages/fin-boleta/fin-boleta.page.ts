@@ -10,12 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FinBoletaPage implements OnInit {
   datosCompra: any = {};
+  usuario: Usuario | null = null;
+  precioTotal: number = 0;
+
 
   constructor(public servicios: ServiciosService) { }
 
   ngOnInit() {
     this.datosCompra = this.servicios.obtenerDatosCompra();  
     console.log(this.datosCompra);  // Imprimir pa ver si trajo los datos o no sii funcaaaa
+    this.usuario = this.servicios.obtenerUsuarioActual();
+    this.precioTotal = this.servicios.obtenerPrecioTotal();
+
+
   }
 
 
